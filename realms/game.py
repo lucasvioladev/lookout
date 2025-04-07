@@ -1,6 +1,7 @@
 import os
 import time 
 import sys
+from menu import epilogue
 
 debug = True
 
@@ -18,9 +19,9 @@ def dottime():
 def ht():
     for _ in range(3):
         print(".", end='\r')
-        time.sleep(5)
+        time.sleep(1)
         print(" ", end='\r')  # Limpa o caractere anterior
-        time.sleep(5)
+        time.sleep(1)
 
 def format_text(text, color_code):
     """
@@ -185,8 +186,17 @@ def display_gameintro ():
 
 def gameplay_epilogue():
     clear_screen()
-    print(format_text("EPÍLOGO CONCLUÍDO", "1;107"))
-    print("\033[1;34mRodovia que liga Los Angeles ao Mount San Gorgonio, 07:38 da manhã.\033[0m")  # Narração da cena
+    print(epilogue)
+    input("Pressione Enter para continuar...")
+    clear_screen()
+    time.sleep(5)
+    print(format_text("Você acorda com o despertador tocando. São 6:00 da manhã.", "1;34"))  # Narração da cena
+    time.sleep(2)
+    print(format_text("Você se levanta da cama e se veste. A temperatura está agradável, uns 20 graus.", "1;34"))  # Narração do personagem
+    time.sleep(2)
+    print(format_text("Você toma um banho rápido e vai direto para o seu carro, um Honda Civic velho preto. Você passa pelo menos 10 minutos tentando ligar ele.", "1;34"))  # Narração do personagem 
+    ht()
+    print("\033[1;34mState Route 38, 07:38 da manhã.\033[0m")  # Narração da cena
     ht()
     print("\nDepois de 2 horas dirigindo, finalmente cheguei ao parque.")  # Narração do personagem
     ht()
