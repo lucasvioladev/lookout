@@ -1,19 +1,19 @@
 import os
 import time 
 import sys
-from menu import epilogue
+from menu import epilogue, display_production, display_title
 
-debug = True
+debug = False
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def dottime():
-    time.sleep(5)
+    time.sleep(2)
     print(".")
-    time.sleep(5)
+    time.sleep(2)
     print(".")
-    time.sleep(5)
+    time.sleep(2)
     print(".")
 
 def ht():
@@ -189,7 +189,7 @@ def gameplay_epilogue():
     print(epilogue)
     input("Pressione Enter para continuar...")
     clear_screen()
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Você acorda com o despertador tocando. São 6:00 da manhã.", "1;34"))  # Narração da cena
     time.sleep(2)
     print(format_text("Você se levanta da cama e se veste. A temperatura está agradável, uns 20 graus.", "1;34"))  # Narração do personagem
@@ -209,70 +209,70 @@ def gameplay_epilogue():
     print("O posto avançado é um pequeno prédio de madeira, com uma torre de vigia ao lado. É baixa, feita de madeira também.")
     ht()
     print("\033[1;32mPark Ranger:\033[0m Oi, você deve ser o Jhon. Eu sou o Matt, vou estar com você nesse período. Você lá em cima e eu aqui embaixo.")
-    time.sleep(5)
+    time.sleep(2)
     lembrancas("character", "Você conheceu o Park Ranger Matt.")
     ht()
     print(format_text("Você: ", "1;32") + "Ah... Oi Mat. Sim, eu sou o Jhon...")
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Matt: ", "1;32") + "Vamos lá, vou te mostrar a torre e o posto. Onde estão suas malas? Veio de carro?.")
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Você: ", "1;32") + "Sim, eu vim de carro. Minhas malas estão no porta-malas.")
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Matt: ", "1;32") + "Beleza. Vamos lá então, vou te ajudar a pegar as malas.")
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Vocês saem pela porta e vão até o carro.", "3;33"))
     ht()
     print(format_text("Você sente algo te observando.", "2;30"))
-    time.sleep(5)
+    time.sleep(2)
     choice = multiple_choice(format_text("O que fazer?.", "1;33"), ["Investigar", "Ignorar"])
     if choice == "Investigar":
         print(format_text("Você olha aos arredores e vê algo em meio à umas arvores que tem ali por perto, provavelmente um cervo.", "2;30"))
-        time.sleep(5)
+        time.sleep(2)
     elif choice == "Ignorar":
         print(format_text("Você ignora e continua a andar. Mas ainda continua olhando para o local.", "2;30"))
         ht()
     print(format_text("Matt: ", "1;32") + "Você está bem? Parece meio distraído.")
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Você: ", "1;32") + "Sim, só estava olhando...")
-    time.sleep(5)
+    time.sleep(2)
     choice = multiple_choice(format_text("Contar o que viu?.", "1;33"), ["Sim", "Não"])
     if choice == "Sim": 
         print(format_text("Você conta para o Matt o que viu.", "3;33"))
-        time.sleep(5)
+        time.sleep(2)
         print(format_text("Matt: ", "1;32") + "Ah, deve ser um cervo. Eles são comuns aqui.")
-        time.sleep(5)
+        time.sleep(2)
         print(format_text("Você: ", "1;32") + "Sim, eu sei. Eu só... Ah, nada. Deixa pra lá.")
-        time.sleep(5)
+        time.sleep(2)
     elif choice == "Não":
         print(format_text("Você não conta nada para o Matt.", "3;33"))
-        time.sleep(5)
+        time.sleep(2)
     print(format_text("Matt: ", "1;32") + "Beleza, vamos lá então.")
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Vocês vão até o carro e pegam as malas.", "3;33"))
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Matt: ", "1;32") + "Rapaz, você trouxe muita coisa. Não vai precisar de tudo isso.")
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Você: ", "1;32") + "Sim, eu preciso de tudo isso. Não quero passar aperto.")
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Matt faz uma cara de riso", "3;33"))
     print(format_text("Matt: ", "1;32") + "Beleza, beleza. Vamos lá então.")
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Ele pega algumas malas. E você pega as outras.", "3;33"))
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Vocês vão até a garagem da unidade. Você vê uma Chevrolet Tahoe 2021 dos State Parks Peace Officers estacionada. Ela é branca, com uma estrela prata nas portas do motorista e do passageiro.", "3;33"))
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Matt: ", "1;32") + "Ah, é a nossa viatura. Vamos usar ela para ir até a torre. A torre não é longe, uns 2 quilômetros daqui, mas o terreno é meio complicado. Então vamos de carro.")
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Você: ", "1;32") + "E se eu precisar de ajuda lá em cima?.")
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Matt: ", "1;32") + "Se precisar, é só me chamar. Eu vou estar aqui embaixo, na unidade. Vou ficar de olho em você. Lá em cima você tem um rádio ANPEC, e eu também tenho um aqui embaixo. Se precisar de algo, é só me chamar. E se eu não atender, é porque estou ocupado. Mas pode ficar tranquilo, eu vou estar sempre de olho em você.")
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Você: ", "1;32") + "Beleza, beleza. Vamos lá então.")
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Vocês entram na viatura e vão até a torre. A viatura é bem confortável e você se sente bem.", "3;33"))
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Matt: ", "1;32") + "A torre é bem alta, você vai ver tudo de lá de cima. E a vista é linda. Você vai adorar.")
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Vocês estão passando por dentro de uma floresta. A floresta é bem densa e você não vê muito, só algumas entradas de trilha com placas.", "3;33"))
     remaining_questions = ["Sobre os incêndios", "Sobre a torre", "Sobre o parque"]
     while remaining_questions:
@@ -281,39 +281,40 @@ def gameplay_epilogue():
             break
         elif choice == "Sobre os incêndios":
             print(format_text("Você pergunta sobre os incêndios.", "3;33"))
-            time.sleep(5)
+            time.sleep(2)
             print(format_text("Matt: ", "1;32") + "Ah, os incêndios são comuns aqui. O parque é muito grande e tem muita vegetação. E o clima é seco. Então os incêndios são comuns. Mas a gente sempre consegue controlar eles. E se precisar, a gente chama os bombeiros.")
-            time.sleep(5)
+            time.sleep(2)
             remaining_questions.remove("Sobre os incêndios")
         elif choice == "Sobre a torre":
             print(format_text("Você pergunta sobre a torre.", "3;33"))
-            time.sleep(5)
+            time.sleep(2)
             print(format_text("Matt: ", "1;32") + "Ah, como eu disse a torre é bem alta. Você vai ver tudo de lá de cima. Tem uma cama, uma mesa com um computador, um micro-ondas e um frigobarzinho.")
-            time.sleep(5)
+            time.sleep(2)
             remaining_questions.remove("Sobre a torre")
         elif choice == "Sobre o parque":
             print(format_text("Você pergunta sobre o parque.", "3;33"))
-            time.sleep(5)
+            time.sleep(2)
             print(format_text("Matt: ", "1;32") + "Ah, o parque? O parque é extenso pra caramba, quase 3000 quilômetros quadrados. Tem muita coisa para fazer. Tem trilhas, lagos, montanhas, tudo muito bonito. E o clima é bom na maior parte do ano. De vez em quando... Tem algumas coisas.")
-            time.sleep(5)
+            time.sleep(2)
             print(format_text("Você: ", "1;32") + "O que você quer dizer com 'coisas'?")
-            time.sleep(5)
+            time.sleep(2)
             print(format_text("Matt: ", "1;32") + "Ah, nada, nada... Só algumas coisas que acontecem de vez em quando. Mas nada demais. Não se preocupe com isso.")
-            time.sleep(5)
+            time.sleep(2)
             remaining_questions.remove("Sobre o parque")
     print(format_text("Vocês chegam à torre. É uma estrutura de metal, deve ter uns 25 metros de altura. Tem uma escada de metal que circunda a estrutura que leva até o topo. A base dela é cimentada, perto do começo da escada tem um gerador de energia, uma caixa de metal cinza com um adesivo com fundo amarelo e um desenho de raio ao centro. Tembém uma barracãozinho que armazena algumas coisas.", "3;33"))
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Matt: ", "1;32") + "Chegamos. Essa é a torre. É aqui que você vai ficar aqui por 3 semanas.")
-    time.sleep(5)
+    time.sleep(2)
     print(format_text("Você: ", "1;32") + "É, 3 semanas...")
     ht()
     ht()
     ht()
     print(format_text("EPÍLOGO CONCLUÍDO", "1;35"))
 
-
-
-
+def gameplay_act1():
+    clear_screen()
+    ht()
+    print(format_text("Você está na torre. Dentro da cabine, você vê uma cama no canto, ao lado dela uma mesa com um computador e alguns documentos espalhados em cima. Ao centro tem outra mesa, em cima dela tem algumas ferramentas, uma mochila, um lampião.", "1;33"))
 
 if debug == True:
     gameplay_epilogue()
@@ -340,4 +341,7 @@ def gameplay_loop():
             print("Opção inválida. Tente novamente.")
 
 if debug == False:
+    display_production()
+    display_title()
     display_gameintro()
+    gameplay_epilogue()
